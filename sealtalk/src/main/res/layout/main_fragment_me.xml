@@ -11,23 +11,91 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <cn.rongcloud.im.ui.view.UserInfoItemView
-            android:id="@+id/uiv_userinfo"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/seal_mine_userfino_item_height"
-            android:layout_marginTop="@dimen/seal_mine_user_margin_top"
-            app:item_userinfo_portrait_height="@dimen/seal_mine_userfino_item_protrait"
-            app:item_userinfo_portrait_width="@dimen/seal_mine_userfino_item_protrait">
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/R1"
+                android:layout_width="70dp"
+                android:background="#ffffff"
+                android:layout_marginTop="@dimen/seal_mine_user_margin_top"
+                android:layout_height="@dimen/seal_mine_userfino_item_height"
+                android:layout_alignParentRight="true">
+                <ImageView
+                    android:id="@+id/siv_setting_qrcode"
+                    android:layout_width="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="30dp"
+                    android:src="@drawable/personal_code"
+                    android:layout_marginTop="@dimen/seal_mine_user_margin_top"
+                    android:layout_alignParentLeft="true"/>
+            </RelativeLayout>
+            <cn.rongcloud.im.ui.view.UserInfoItemView
+                android:id="@+id/uiv_userinfo"
+                android:layout_toLeftOf="@id/R1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/seal_mine_userfino_item_height"
+                android:layout_marginTop="@dimen/seal_mine_user_margin_top"
+                app:item_userinfo_portrait_height="@dimen/seal_mine_userfino_item_protrait"
+                app:item_userinfo_portrait_width="@dimen/seal_mine_userfino_item_protrait">
 
-        </cn.rongcloud.im.ui.view.UserInfoItemView>
 
-        <cn.rongcloud.im.ui.view.SettingItemView
-            android:id="@+id/siv_setting_qrcode"
+            </cn.rongcloud.im.ui.view.UserInfoItemView>
+        </RelativeLayout>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/seal_mine_setting_item_height"
-            android:layout_marginTop="@dimen/seal_mine_setting_item_margin_top"
-            app:item_content="@string/seal_main_mine_qrcode"
-            app:item_image="@drawable/seal_ic_mine_qrcode" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:padding="20dp"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/student_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="学生信息"
+                android:gravity="center_horizontal"
+                android:drawableTop="@drawable/personal_info"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:id="@+id/personal_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="签到打卡"
+                android:drawableTop="@drawable/personal_signup"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:id="@+id/personal_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="点赞收藏"
+                android:drawableTop="@drawable/personal_collection"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:id="@+id/personal_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="积分商城"
+                android:drawableTop="@drawable/personal_store"
+                android:drawablePadding="10dp"/>
+        </LinearLayout>
+<!--        <cn.rongcloud.im.ui.view.SettingItemView-->
+<!--            android:id="@+id/siv_setting_qrcode"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/seal_mine_setting_item_height"-->
+<!--            android:layout_marginTop="@dimen/seal_mine_setting_item_margin_top"-->
+<!--            app:item_content="@string/seal_main_mine_qrcode"-->
+<!--            app:item_image="@drawable/seal_ic_mine_qrcode" />-->
 
         <cn.rongcloud.im.ui.view.SettingItemView
             android:id="@+id/siv_setting_account"
@@ -39,27 +107,18 @@
 
         </cn.rongcloud.im.ui.view.SettingItemView>
 
-        <cn.rongcloud.im.ui.view.SettingItemView
-            android:id="@+id/siv_language"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/seal_mine_setting_item_height"
-            android:layout_marginTop="@dimen/seal_mine_setting_item_margin_top"
-            app:item_content="@string/seal_main_mine_setting_language"
-            app:item_image="@drawable/seal_ic_mine_language"
-            app:item_value="@string/lang_chs">
 
-        </cn.rongcloud.im.ui.view.SettingItemView>
 
-        <cn.rongcloud.im.ui.view.SettingItemView
-            android:id="@+id/siv_feedback"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/seal_mine_setting_item_height"
-            android:layout_marginTop="@dimen/seal_mine_setting_item_margin_top"
-            app:item_content="@string/seal_main_mine_feedback"
-            app:item_divider="true"
-            app:item_image="@drawable/seal_ic_mine_service">
+<!--        <cn.rongcloud.im.ui.view.SettingItemView-->
+<!--            android:id="@+id/siv_feedback"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/seal_mine_setting_item_height"-->
+<!--            android:layout_marginTop="@dimen/seal_mine_setting_item_margin_top"-->
+<!--            app:item_content="@string/seal_main_mine_feedback"-->
+<!--            app:item_divider="true"-->
+<!--            app:item_image="@drawable/seal_ic_mine_service">-->
 
-        </cn.rongcloud.im.ui.view.SettingItemView>
+<!--        </cn.rongcloud.im.ui.view.SettingItemView>-->
 
 
         <cn.rongcloud.im.ui.view.SettingItemView
@@ -73,18 +132,29 @@
 
         </cn.rongcloud.im.ui.view.SettingItemView>
 
+
+        <cn.rongcloud.im.ui.view.SettingItemView
+            android:id="@+id/siv_language"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/seal_mine_setting_item_height"
+            android:layout_marginTop="@dimen/seal_mine_setting_item_margin_top"
+            app:item_content="@string/seal_main_mine_setting_language"
+            app:item_image="@drawable/seal_ic_mine_language"
+            app:item_value="@string/lang_chs">
+
+        </cn.rongcloud.im.ui.view.SettingItemView>
         <cn.rongcloud.im.ui.view.SettingItemView
             android:id="@+id/siv_about"
             android:layout_width="match_parent"
             android:layout_height="@dimen/seal_mine_setting_item_height"
             app:item_content="@string/seal_main_mine_about"
             app:item_image="@drawable/seal_ic_mine_about"
+            android:layout_marginTop="@dimen/seal_mine_setting_item_margin_top"
             app:item_tag_image="@drawable/seal_ic_new_version"
             app:item_tag_image_height="@dimen/seal_mine_setting_item_tag_height"
             app:item_tag_image_width="@dimen/seal_mine_setting_item_tag_width">
 
         </cn.rongcloud.im.ui.view.SettingItemView>
-
 
     </LinearLayout>
 </ScrollView>

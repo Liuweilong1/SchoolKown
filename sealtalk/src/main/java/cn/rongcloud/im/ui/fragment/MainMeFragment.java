@@ -2,8 +2,8 @@ package cn.rongcloud.im.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -15,7 +15,11 @@ import cn.rongcloud.im.model.Resource;
 import cn.rongcloud.im.model.Status;
 import cn.rongcloud.im.model.VersionInfo;
 import cn.rongcloud.im.model.qrcode.QrCodeDisplayType;
-import cn.rongcloud.im.ui.activity.AboutSealTalkActivity;
+import cn.rongcloud.im.ui.Parent.SmallActivity.MineActivity_aboutus;
+import cn.rongcloud.im.ui.Parent.SmallActivity.MineActivity_collections;
+import cn.rongcloud.im.ui.Parent.SmallActivity.MineActivity_signup;
+import cn.rongcloud.im.ui.Parent.SmallActivity.MineActivity_student;
+import cn.rongcloud.im.ui.Parent.SmallActivity.ShopActivity;
 import cn.rongcloud.im.ui.activity.AccountSettingActivity;
 import cn.rongcloud.im.ui.activity.ChangeLanguageActivity;
 import cn.rongcloud.im.ui.activity.MyAccountActivity;
@@ -26,9 +30,7 @@ import cn.rongcloud.im.utils.ImageLoaderUtils;
 import cn.rongcloud.im.viewmodel.AppViewModel;
 import cn.rongcloud.im.viewmodel.UserInfoViewModel;
 import io.rong.imkit.RongIM;
-import io.rong.imkit.userInfoCache.RongUserInfoManager;
 import io.rong.imkit.utilities.LangUtils;
-import io.rong.imlib.model.CSCustomServiceInfo;
 
 public class MainMeFragment extends BaseFragment {
 
@@ -36,7 +38,7 @@ public class MainMeFragment extends BaseFragment {
     private UserInfoItemView uivUserInfo;
     private AppViewModel appViewModel;
     private SettingItemView sivLanguage;
-
+    private TextView studentInfo;
     @Override
     protected int getLayoutResId() {
         return R.layout.main_fragment_me;
@@ -49,8 +51,12 @@ public class MainMeFragment extends BaseFragment {
         findView(R.id.siv_setting_qrcode, true);
         findView(R.id.siv_setting_account, true);
         sivLanguage = findView(R.id.siv_language, true);
-        findView(R.id.siv_feedback, true);
+        findView(R.id.personal_collection,true);
+//        findView(R.id.siv_feedback, true);
         sivAbout = findView(R.id.siv_about, true);
+        studentInfo=findView(R.id.student_info,true);
+        findView(R.id.personal_signup,true);
+        findView(R.id.personal_store,true);
     }
 
     @Override
@@ -112,24 +118,36 @@ public class MainMeFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), ChangeLanguageActivity.class));
 
                 break;
-            case R.id.siv_feedback:
-                CSCustomServiceInfo.Builder builder = new CSCustomServiceInfo.Builder();
-                builder.province(getString(R.string.beijing));
-                builder.city(getString(R.string.beijing));
-                io.rong.imlib.model.UserInfo info = RongUserInfoManager.getInstance().getUserInfo(RongIM.getInstance().getCurrentUserId());
-                if (info != null && !TextUtils.isEmpty(info.getName())) {
-                    builder.name(info.getName());
-                }
-                //佳信客服配置
-                builder.referrer("10001");
-                RongIM.getInstance().startCustomerServiceChat(getActivity(), "service", getString(R.string.seal_main_mine_online_custom_service), builder.build());
+            case R.id.student_info:
+                startActivity(new Intent(getActivity(), MineActivity_student.class));
                 break;
+            case R.id.personal_collection:
+                startActivity(new Intent(getActivity(), MineActivity_collections.class));
+                break;
+            case R.id.personal_signup:
+                startActivity(new Intent(getActivity(), MineActivity_signup.class));
+                break;
+            case R.id.personal_store:
+                startActivity(new Intent(getActivity(), ShopActivity.class));
+                break;
+//            case R.id.siv_feedback:
+//                CSCustomServiceInfo.Builder builder = new CSCustomServiceInfo.Builder();
+//                builder.province(getString(R.string.beijing));
+//                builder.city(getString(R.string.beijing));
+//                io.rong.imlib.model.UserInfo info = RongUserInfoManager.getInstance().getUserInfo(RongIM.getInstance().getCurrentUserId());
+//                if (info != null && !TextUtils.isEmpty(info.getName())) {
+//                    builder.name(info.getName());
+//                }
+//                //佳信客服配置
+//                builder.referrer("10001");
+//                RongIM.getInstance().startCustomerServiceChat(getActivity(), "service", getString(R.string.seal_main_mine_online_custom_service), builder.build());
+//                break;
             case R.id.siv_about:
-                Intent intent = new Intent(getActivity(), AboutSealTalkActivity.class);
-                Resource<VersionInfo.AndroidVersion> resource = appViewModel.getHasNewVersion().getValue();
-                if (resource != null && resource.data != null && !TextUtils.isEmpty(resource.data.getUrl())) {
-                    intent.putExtra(IntentExtra.URL, resource.data.getUrl());
-                }
+                Intent intent = new Intent(getActivity(), MineActivity_aboutus.class);
+//                Resource<VersionInfo.AndroidVersion> resource = appViewModel.getHasNewVersion().getValue();
+//                if (resource != null && resource.data != null && !TextUtils.isEmpty(resource.data.getUrl())) {
+//                    intent.putExtra(IntentExtra.URL, resource.data.getUrl());
+//                }
                 startActivity(intent);
                 break;
             default:

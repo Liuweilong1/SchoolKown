@@ -26,6 +26,10 @@ import cn.rongcloud.im.model.Resource;
 import cn.rongcloud.im.model.Status;
 import cn.rongcloud.im.model.VersionInfo;
 import cn.rongcloud.im.ui.BaseActivity;
+import cn.rongcloud.im.ui.Parent.Entities.Variable;
+import cn.rongcloud.im.ui.Parent.Fragment.HomeFragment;
+import cn.rongcloud.im.ui.Parent.Fragment.LocationFragment;
+import cn.rongcloud.im.ui.Parent.Fragment.TeacherHomeFragment;
 import cn.rongcloud.im.ui.dialog.MorePopWindow;
 import cn.rongcloud.im.ui.fragment.MainContactsListFragment;
 import cn.rongcloud.im.ui.fragment.MainConversationListFragment;
@@ -58,22 +62,24 @@ public class MainActivity extends BaseActivity implements MorePopWindow.OnPopWin
      * tab 项枚举
      */
     public enum Tab {
+        HOME(0),
         /**
          * 聊天
          */
-        CHAT(0),
+        CHAT(1),
         /**
          * 联系人
          */
-        CONTACTS(1),
-        /**
-         * 发现
-         */
-        FIND(2),
+        LOCATION(2),
+        CONTACTS(3),
+//        /**
+//         * 发现
+//         */
+//        FIND(2),
         /**
          * 我的
          */
-        ME(3);
+        ME(4);
 
         private int value;
 
@@ -99,9 +105,11 @@ public class MainActivity extends BaseActivity implements MorePopWindow.OnPopWin
      * tabs 的图片资源
      */
     private int[] tabImageRes = new int[]{
+            R.drawable.school_parent_tab_home_selector,
             R.drawable.seal_tab_chat_selector,
+            R.drawable.school_parent_tab_location_selector,
             R.drawable.seal_tab_contact_list_selector,
-            R.drawable.seal_tab_find_selector,
+//            R.drawable.seal_tab_find_selector,
             R.drawable.seal_tab_me_selector
     };
 
@@ -146,7 +154,7 @@ public class MainActivity extends BaseActivity implements MorePopWindow.OnPopWin
      * 初始化布局
      */
     private void initView() {
-        int tabIndex = getIntent().getIntExtra(PARAMS_TAB_INDEX, Tab.CHAT.getValue());
+        int tabIndex = getIntent().getIntExtra(PARAMS_TAB_INDEX, Tab.HOME.getValue());
 
         // title
         findViewById(R.id.btn_search).setOnClickListener(new View.OnClickListener() {
@@ -239,9 +247,18 @@ public class MainActivity extends BaseActivity implements MorePopWindow.OnPopWin
      * 初始化 initFragmentViewPager
      */
     private void initFragmentViewPager() {
+
+        if(Variable.loginIdentity==1){
+            fragments.add(new TeacherHomeFragment());
+        }else if(Variable.loginIdentity==2){
+            fragments.add(new HomeFragment());
+        }
+
         fragments.add(new MainConversationListFragment());
+        fragments.add(new LocationFragment());
         fragments.add(new MainContactsListFragment());
-        fragments.add(new MainDiscoveryFragment());
+
+//        fragments.add(new MainDiscoveryFragment());
         fragments.add(new MainMeFragment());
 
         // ViewPager 的 Adpater

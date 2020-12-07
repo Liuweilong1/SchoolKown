@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.RoomWarnings;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import cn.rongcloud.im.model.RegularClearStatusResult;
 import cn.rongcloud.im.ui.adapter.models.SearchGroupMember;
 
 @Dao
+@SuppressWarnings(RoomWarnings.CURSOR_MISMATCH)
 public interface GroupDao {
 
     @Query("SELECT * from `group` where id=:groupId")

@@ -147,7 +147,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/profile_qrcode_share_to_sealtalk"
+                android:text="分享至校晓"
                 android:textColor="@color/default_clickable_text"
                 android:textSize="13dp" />
 

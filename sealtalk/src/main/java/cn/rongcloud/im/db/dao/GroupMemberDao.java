@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.RoomWarnings;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import cn.rongcloud.im.db.model.GroupMemberInfoEntity;
 import cn.rongcloud.im.model.GroupMember;
 
 @Dao
+@SuppressWarnings(RoomWarnings.CURSOR_MISMATCH)
 public interface GroupMemberDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertGroupMemberList(List<GroupMemberInfoEntity> groupMemberInfoEntities);

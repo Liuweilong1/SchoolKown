@@ -337,4 +337,8 @@
     <dimen name="seal_group_notice_item_margin_3">3dp</dimen>
     <dimen name="seal_group_notice_item_margin_7">7dp</dimen>
 
+
+    <!--家长端-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

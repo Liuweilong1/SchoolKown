@@ -51,9 +51,10 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onChanged(Boolean result) {
                 SLog.d("ss_auto", "result = " + result);
-
+//
                 if (result) {
                     goToMain();
+//                    goToLogin();
                 } else {
                     if (intentUri != null) {
                         ToastUtils.showToast(R.string.seal_qrcode_jump_without_login);

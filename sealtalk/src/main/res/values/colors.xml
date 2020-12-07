@@ -111,4 +111,20 @@
     <color name="seal_dialog_clean_notice_cancel">#0076FF</color>
 
     <color name="seal_group_detail_clean_tips">#8B8B8B</color>
+
+    <!--  家长端-->
+    <color name="colorTextColor">#656565</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_28d19d">#28d19d</color>
+    <color name="color_666666">#666666</color>
+    <color name="colorGrey">#bfbfbf</color>
+
+    <!--家长端-->
+    <color name="colorMainLight">#9ba3f2</color>
+    <color name="colorTwoDark">#291e6c</color>
+    <color name="colorMain">#6f79ff</color>
 </resources>

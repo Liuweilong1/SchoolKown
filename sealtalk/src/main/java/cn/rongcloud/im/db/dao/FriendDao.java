@@ -2,9 +2,11 @@ package cn.rongcloud.im.db.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Ignore;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.RoomWarnings;
 
 import java.util.List;
 
@@ -18,6 +20,7 @@ import cn.rongcloud.im.model.UserSimpleInfo;
 
 
 @Dao
+@SuppressWarnings(RoomWarnings.CURSOR_MISMATCH)
 public interface FriendDao {
     @Query("SELECT friend.id as id ,alias,portrait_uri,name,region,phone_number,friend_status,message,updateAt,alias_spelling, name_spelling,order_spelling " +
             "FROM friend " +
@@ -25,6 +28,7 @@ public interface FriendDao {
             "on friend.id = user.id " +
             "order by user.order_spelling")
     LiveData<List<FriendShipInfo>> getAllFriendListDB();
+
 
     @Query("SELECT friend.id,alias,portrait_uri,name,region,phone_number,friend_status,message,updateAt,alias_spelling, name_spelling,order_spelling " +
             "FROM friend INNER JOIN user on friend.id = user.id WHERE friend.id = :id")

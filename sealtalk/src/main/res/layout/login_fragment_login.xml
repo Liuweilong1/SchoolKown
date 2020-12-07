@@ -105,5 +105,33 @@
         android:text="@string/seal_login_text_login"
         android:textColor="@color/white"
         android:textSize="@dimen/seal_login_fragment_login_btn_text_size" />
+    <RadioGroup
+        android:id="@+id/login_identity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/fragment_container"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/login_radio_teacher"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="我是教师"/>
+        <RadioButton
+            android:id="@+id/login_radio_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="我是家长"/>
+    </RadioGroup>
 
 </LinearLayout>

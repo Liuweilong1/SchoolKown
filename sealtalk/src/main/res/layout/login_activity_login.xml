@@ -4,25 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.LoginActivity"
+    android:background="@drawable/login_bg">
 
 
-    <ImageView
-        android:id="@+id/iv_login_bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginRight="@dimen/seal_login_bg_margin_right"
-        android:scaleType="centerCrop"
-        android:src="@drawable/seal_ic_login_bg"
-    />
 
-    <ImageView
+
+    <cn.rongcloud.im.ui.Parent.Entities.RoundImageView
         android:id="@+id/de_login_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/seal_login_logo_margin_top"
-        android:src="@drawable/seal_ic_logo"
+        app:rect_adius="15"
+        android:src="@drawable/schoolkown"
         android:layout_centerHorizontal="true"
         />
 
@@ -32,15 +27,16 @@
         android:layout_height="match_parent"
         android:layout_below="@id/de_login_logo"
         >
-
     </FrameLayout>
+
+
 
     <!-- 登陆界面底部布局 -->
 
     <TextView
         android:id="@+id/tv_find_passsword"
-        android:textSize="@dimen/seal_login_text_button_text_size"
-        android:textColor="@color/seal_login_text_button_color"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/seal_login_buttom_padding"
@@ -49,30 +45,30 @@
 
     <TextView
         android:id="@+id/tv_register_left"
-        android:textSize="@dimen/seal_login_text_button_text_size"
-        android:textColor="@color/seal_login_text_button_color"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/seal_login_buttom_padding"
         android:layout_alignParentBottom="true"
         android:text="@string/seal_login_text_new_user" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Powered by RongCloud"
-        android:textSize="@dimen/seal_login_rongcloud_text_size"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:padding="@dimen/seal_login_buttom_padding"
-        android:textColor="#484848"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Powered by RongCloud"-->
+<!--        android:textSize="@dimen/seal_login_rongcloud_text_size"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:padding="@dimen/seal_login_buttom_padding"-->
+<!--        android:textColor="#484848"-->
+<!--        />-->
 
 
     <TextView
         android:id="@+id/tv_register_right"
-        android:textSize="@dimen/seal_login_text_button_text_size"
-        android:textColor="@color/seal_login_text_button_color"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/seal_login_buttom_padding"
@@ -82,8 +78,8 @@
 
     <TextView
         android:id="@+id/tv_login"
-        android:textSize="@dimen/seal_login_text_button_text_size"
-        android:textColor="@color/seal_login_text_button_color"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/seal_login_buttom_padding"

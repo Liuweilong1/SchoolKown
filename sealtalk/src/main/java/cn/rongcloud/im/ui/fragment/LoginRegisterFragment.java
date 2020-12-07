@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -19,12 +21,13 @@ import cn.rongcloud.im.model.CountryInfo;
 import cn.rongcloud.im.model.RegisterResult;
 import cn.rongcloud.im.model.Resource;
 import cn.rongcloud.im.model.Status;
+import cn.rongcloud.im.ui.Parent.Entities.Variable;
 import cn.rongcloud.im.ui.activity.SelectCountryActivity;
 import cn.rongcloud.im.ui.widget.ClearWriteEditText;
 import cn.rongcloud.im.viewmodel.LoginViewModel;
 import cn.rongcloud.im.utils.log.SLog;
 
-public class LoginRegisterFragment extends BaseFragment {
+public class LoginRegisterFragment extends BaseFragment implements RadioGroup.OnCheckedChangeListener{
 
     private static final int REQUEST_CODE_SELECT_COUNTRY = 1000;
 
@@ -38,7 +41,23 @@ public class LoginRegisterFragment extends BaseFragment {
     private TextView countryCodeTv;
     private boolean isRequestVerifyCode = false; // 是否请求成功验证码
     private OnRegisterListener listener;
+    private RadioGroup radioGroup;
 
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (checkedId){
+            case R.id.register_radio_teacher:
+                //如果为买家身份，则将标识符置为1
+                Variable.registerIdentity=1;
+                Log.e("注册教师","1");
+                break;
+            case R.id.register_radio_parent:
+                //如果为卖家身份，则将标识符置为2
+                Variable.registerIdentity=2;
+                Log.e("注册家长","2");
+                break;
+        }
+    }
     @Override
     protected int getLayoutResId() {
         return R.layout.login_fragment_register;
@@ -49,6 +68,8 @@ public class LoginRegisterFragment extends BaseFragment {
         userNameEdit = findView(R.id.cet_reg_username);
         passwordEdit = findView(R.id.cet_reg_password);
         countryNameTv = findView(R.id.tv_reg_country_name);
+        radioGroup=findView(R.id.register_identity);
+        radioGroup.setOnCheckedChangeListener(this);
         countryCodeTv = findView(R.id.tv_reg_country_code);
         findView(R.id.ll_reg_country_select, true);
         phoneEdit = findView(R.id.cet_reg_phone);

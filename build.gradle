@@ -28,6 +28,7 @@ allprojects {
         mavenCentral()
         maven {url 'http://developer.huawei.com/repo/'}
         maven {url  "https://dl.bintray.com/rongcloud/maven"}
+        maven { url 'https://www.jitpack.io' }
     }
 }
 

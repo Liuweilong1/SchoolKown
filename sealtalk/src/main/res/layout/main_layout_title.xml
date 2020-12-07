@@ -5,13 +5,14 @@
     android:background="@color/seal_main_title_bg"
     android:gravity="center_vertical"
     android:orientation="horizontal">
-
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/seal_main_title_logo_margin_left"
-        android:background="@drawable/seal_ic_main_title_logo" />
-
+        android:text="School &#038; Home"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="21sp"
+        android:layout_marginLeft="15dp"/>
     <View
         android:layout_width="0dp"
         android:layout_height="match_parent"

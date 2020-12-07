@@ -92,5 +92,26 @@ dependencies {
     api project(path: ':contactcard')
     api project(path: ':recognizer')
     api project(path: ':pushpermission')
+
+
+    /*  家长端*/
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.youth.banner:banner:1.4.9'  //最新版本
+    implementation 'com.lcw.library:imagepicker:2.2.0'
+
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation files('libs\\mid-sdk-2.10.jar')
+    implementation files('libs\\mta-sdk-2.0.0.jar')
+    implementation files('libs\\open_sdk_3.5.1.152_rd6ba70e_lite.jar')
+
+//    implementation 'com.contrarywind:Android-PickerView:3.2.6'
+////    implementation 'com.github.YangsBryant:TeaPickerView:1.0.2'
+////    //butterknife
+//    implementation 'com.jakewharton:butterknife:10.0.0'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+//    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
 }
 // apply plugin: 'com.huawei.agconnect'
+
