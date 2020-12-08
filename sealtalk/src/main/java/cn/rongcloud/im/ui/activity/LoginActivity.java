@@ -64,7 +64,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
      * 初始化界面
      */
     private void initView() {
-        loginBg = findViewById(R.id.iv_login_bg);
+        //loginBg = findViewById(R.id.iv_login_bg);
         changLang = findViewById(R.id.tv_change_lang);
 
         registerLeft = findViewById(R.id.tv_register_left);
