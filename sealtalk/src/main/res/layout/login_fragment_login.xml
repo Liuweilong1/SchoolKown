@@ -66,14 +66,14 @@
             android:id="@+id/cet_login_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rc_ed_public_service_search_selector"
+            android:background="@drawable/edit_circle_translucence"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:hint="@string/seal_login_phone_number"
             android:inputType="phone"
             android:maxLength="20"
             android:maxLines="1"
-            android:textColor="@color/white"
+            android:textColor="@color/color_black_text"
             android:textColorHint="@color/white" />
 
     </LinearLayout>
@@ -85,7 +85,7 @@
         android:layout_marginLeft="@dimen/seal_login_fragment_login_password_margin_left"
         android:layout_marginTop="@dimen/seal_login_fragment_login_password_margin_top"
         android:layout_marginRight="@dimen/seal_login_fragment_login_password_margin_right"
-        android:background="@drawable/rc_ed_public_service_search_selector"
+        android:background="@drawable/edit_circle_translucence"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:hint="@string/seal_login_password"
@@ -107,10 +107,11 @@
         android:textSize="@dimen/seal_login_fragment_login_btn_text_size" />
     <RadioGroup
         android:id="@+id/login_identity"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:layout_below="@id/fragment_container"
         android:orientation="horizontal">
         <RadioButton
