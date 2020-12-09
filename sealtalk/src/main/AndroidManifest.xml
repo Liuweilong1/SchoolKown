@@ -50,7 +50,9 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Parent.SmallActivity.Education4"></activity>
+        <activity android:name=".ui.Parent.SmallActivity.SchoolActivity.ListDetailActivity3"></activity>
+        <activity android:name=".ui.Parent.SmallActivity.SchoolActivity.ListDetailActivity2" />
+        <activity android:name=".ui.Parent.SmallActivity.Education4" />
         <activity android:name=".ui.Parent.SmallActivity.Education3" />
         <activity android:name=".ui.Parent.SmallActivity.Education2" />
         <activity android:name=".ui.Parent.SmallActivity.Notifiction.TeacherSendNotificationActivity" />
