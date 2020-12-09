@@ -50,7 +50,10 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Parent.SmallActivity.Notifiction.TeacherSendNotificationActivity"></activity>
+        <activity android:name=".ui.Parent.SmallActivity.Education4"></activity>
+        <activity android:name=".ui.Parent.SmallActivity.Education3" />
+        <activity android:name=".ui.Parent.SmallActivity.Education2" />
+        <activity android:name=".ui.Parent.SmallActivity.Notifiction.TeacherSendNotificationActivity" />
         <activity android:name=".ui.Parent.SmallActivity.Notifiction.TeacherNotificationActivty" />
         <activity android:name=".ui.Parent.SmallActivity.PublishRecipeActivity" /> <!-- 家长端界面 -->
         <activity android:name=".ui.Parent.SmallActivity.MemberActivity" />
