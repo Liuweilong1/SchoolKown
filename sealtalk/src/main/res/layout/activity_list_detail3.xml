@@ -26,7 +26,7 @@
                     android:id="@+id/iv_bg"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:background="@drawable/activitydetails1"
+                    android:background="@drawable/activitydetails3"
                     android:layout_below="@+id/btn_back"/>
             </RelativeLayout>
 
@@ -41,7 +41,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:gravity="center_horizontal"
-                    android:text="校园艺术表演"
+                    android:text="主题家长会"
                     android:textColor="#000000"
                     android:textSize="25sp" />
 
@@ -133,11 +133,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="20dp"
                         android:textSize="19sp"
-                        android:text="根据学校实际情况同时结合安阳学
-区、市中小学生艺术节活动要求，共设6
-个项目，分艺术表演节目类与艺术作品
-类，艺术表演节目类有声乐、小品、相
-声3个项目;艺术作品类有绘画、书法等项目。"/>
+                        android:text="        以“家校全面互通”为主题开展主题班会，促进家长对学校以及学生学习环境等各方面的全面了解，充分发挥学校与家长对学生的教育作用。"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -149,7 +145,7 @@
             android:orientation="vertical"
             android:layout_gravity="bottom">
             <Button
-                android:id="@+id/activity_btn_good"
+                android:id="@+id/activity_btn_good3"
                 android:layout_width="250dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="10dp"
@@ -158,7 +154,7 @@
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:onClick="onClick"
-                android:text="攒人气"
+                android:text="点击参与"
                 android:textSize="20sp"/>
         </LinearLayout>
 
