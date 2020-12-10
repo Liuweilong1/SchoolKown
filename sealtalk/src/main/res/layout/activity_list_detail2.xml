@@ -26,7 +26,7 @@
                     android:id="@+id/iv_bg"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:background="@drawable/activitydetails1"
+                    android:background="@drawable/activitydetails2"
                     android:layout_below="@+id/btn_back"/>
             </RelativeLayout>
 
@@ -41,7 +41,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:gravity="center_horizontal"
-                    android:text="校园艺术表演"
+                    android:text="校园安全知识讲座"
                     android:textColor="#000000"
                     android:textSize="25sp" />
 
@@ -133,11 +133,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="20dp"
                         android:textSize="19sp"
-                        android:text="根据学校实际情况同时结合安阳学
-区、市中小学生艺术节活动要求，共设6
-个项目，分艺术表演节目类与艺术作品
-类，艺术表演节目类有声乐、小品、相
-声3个项目;艺术作品类有绘画、书法等项目。"/>
+                        android:text="普及校园安全知识，增强学生的安全意识以及自我保护意识，强化自救能力，从火灾等各方面普及各种安全知识，增强学生的安全防范意识。"/>
 
                 </LinearLayout>
             </LinearLayout>
